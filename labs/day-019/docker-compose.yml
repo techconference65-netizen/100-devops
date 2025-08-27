@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-019:
+    image: ubuntu:20.04
+    container_name: day-019-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=19
+      - LAB_TITLE="Install and Configure Web Application"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

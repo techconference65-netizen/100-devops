@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-034:
+    image: ubuntu:20.04
+    container_name: day-034-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=34
+      - LAB_TITLE="Git Hook"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

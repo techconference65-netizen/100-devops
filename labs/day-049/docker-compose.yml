@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-049:
+    image: ubuntu:20.04
+    container_name: day-049-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=49
+      - LAB_TITLE="K8s: Deployments"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

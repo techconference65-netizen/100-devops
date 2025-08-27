@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-044:
+    image: ubuntu:20.04
+    container_name: day-044-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=44
+      - LAB_TITLE="Docker Compose File"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-030:
+    image: ubuntu:20.04
+    container_name: day-030-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=30
+      - LAB_TITLE="Git: Hard Reset"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

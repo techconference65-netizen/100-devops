@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-091:
+    image: ubuntu:20.04
+    container_name: day-091-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=91
+      - LAB_TITLE="Ansible: Lineinfile"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

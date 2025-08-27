@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-092:
+    image: ubuntu:20.04
+    container_name: day-092-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=92
+      - LAB_TITLE="Ansible: Jinja2 Templates"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

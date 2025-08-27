@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-033:
+    image: ubuntu:20.04
+    container_name: day-033-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=33
+      - LAB_TITLE="Resolve Git Merge Conflicts"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

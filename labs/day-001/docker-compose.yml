@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-001:
+    image: ubuntu:20.04
+    container_name: day-001-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=1
+      - LAB_TITLE="Linux User Setup with Non-Interactive Shell"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

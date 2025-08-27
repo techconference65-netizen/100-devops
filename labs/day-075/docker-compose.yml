@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-075:
+    image: ubuntu:20.04
+    container_name: day-075-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=75
+      - LAB_TITLE="Jenkins: Slave Nodes"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

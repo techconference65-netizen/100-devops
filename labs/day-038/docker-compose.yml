@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-038:
+    image: ubuntu:20.04
+    container_name: day-038-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=38
+      - LAB_TITLE="Pull Docker Image"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

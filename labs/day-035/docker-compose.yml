@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-035:
+    image: ubuntu:20.04
+    container_name: day-035-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=35
+      - LAB_TITLE="Install Docker & Start Service"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

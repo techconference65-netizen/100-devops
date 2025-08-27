@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-036:
+    image: ubuntu:20.04
+    container_name: day-036-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=36
+      - LAB_TITLE="Deploy Nginx Container"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  devops-labs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./labs:/app/labs
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - docker-proxy
+    networks:
+      - devops-network
+
+  docker-proxy:
+    image: docker:dind
+    privileged: true
+    ports:
+      - "2376:2376"
+    volumes:
+      - docker-data:/var/lib/docker
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    networks:
+      - devops-network
+
+volumes:
+  docker-data:
+
+networks:
+  devops-network:
+    driver: bridge

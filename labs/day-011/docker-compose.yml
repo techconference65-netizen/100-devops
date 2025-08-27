@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  lab-011:
+    image: ubuntu:20.04
+    container_name: day-011-lab
+    command: tail -f /dev/null
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - LAB_DAY=11
+      - LAB_TITLE="Install and Configure Tomcat Server"
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    driver: bridge
